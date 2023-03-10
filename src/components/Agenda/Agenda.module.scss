@@ -1,0 +1,180 @@
+$lightGray: #202427;
+$accent: #cc203a;
+$desktop-w: 1024px;
+$mobile-w: 640px;
+$tablet-w: 768px;
+$gap-base: 1.25rem;
+$gap-lg: 96px;
+.agendasContainer {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 40%;
+    @media screen and (min-width: $desktop-w) {
+      left: 50%;
+      width: 10px;
+    }
+    top: 0%;
+    bottom: 0%;
+    width: 4px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      180deg,
+      #8a8a8a 0%,
+      #b9b9b9 31.25%,
+      #c0c0c0 50%,
+      #b8b8b8 65.62%,
+      #8c8c8c 100%
+    );
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+  }
+}
+.agendaWrapper,
+.agendaWrapperReverse {
+  grid-template-columns: 2fr 3fr;
+  padding: 2rem 0;
+  @media screen and (min-width: $desktop-w) {
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem 0;
+  }
+  display: grid;
+  color: white;
+  //   font-size: 17px;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    @media screen and (min-width: $desktop-w) {
+      left: 50%;
+      width: 60px;
+      height: 60px;
+    }
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+      72.45% 72.45% at 27.78% 24.07%,
+      #e1e1e1 0%,
+      #9a9898 60.46%,
+      #7b7a7a 79.62%,
+      #878181 100%
+    );
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    z-index: 1;
+  }
+}
+
+.agendaWrapperReverse {
+  @media screen and (min-width: $desktop-w) {
+    .agendaDateWrapper {
+      order: 2;
+      padding-right: 0;
+      padding-left: $gap-lg;
+    }
+    .agendaDate {
+      margin-right: auto;
+      margin-left: 0;
+    }
+    .agendaActivitiesWrapper {
+      padding-left: 0;
+      padding-right: $gap-lg;
+    }
+    .agendaActivities {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+}
+
+.agendaDate {
+  padding: 0.5em;
+  background-color: $lightGray;
+  border: 3px solid $accent;
+  max-width: 256px;
+  border-radius: 1em;
+  margin-left: auto;
+  span {
+    display: block;
+    text-align: center;
+  }
+  & > span:nth-child(1) {
+    font-weight: 900;
+    font-size: 14px;
+  }
+  & > span:nth-child(2) {
+    font-size: 10px;
+    font-weight: 300;
+  }
+  @media screen and (min-width: $tablet-w) {
+    & > span:nth-child(1) {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    & > span:nth-child(2) {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (min-width: $desktop-w) {
+    padding: 1rem;
+    border-radius: 2rem;
+    & > span:nth-child(1) {
+      font-size: 30px;
+    }
+    & > span:nth-child(2) {
+      font-size: 17px;
+    }
+  }
+  &Wrapper {
+    padding-right: $gap-base;
+    @media screen and (min-width: $desktop-w) {
+      padding-right: $gap-lg;
+    }
+  }
+}
+.agendaActivities {
+  padding: 0.5em;
+  max-width: 420px;
+  background-color: $lightGray;
+  border: 3px solid $accent;
+  border-radius: 1em;
+  margin-right: auto;
+  @media screen and (min-width: $desktop-w) {
+    border-radius: 2rem;
+    padding: 1rem;
+  }
+  p {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 300;
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
+    @media screen and (min-width: $tablet-w) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: $desktop-w) {
+      font-size: 17px;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &Time {
+    padding-right: 0.5rem;
+  }
+
+  &Wrapper {
+    padding-left: $gap-base;
+    @media screen and (min-width: $desktop-w) {
+      padding-left: $gap-lg;
+    }
+  }
+}

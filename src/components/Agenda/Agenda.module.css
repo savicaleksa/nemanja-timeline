@@ -1,0 +1,177 @@
+.agendasContainer {
+  position: relative;
+}
+.agendasContainer::after {
+  content: "";
+  position: absolute;
+  left: 40%;
+  top: 0%;
+  bottom: 0%;
+  width: 4px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #8a8a8a 0%, #b9b9b9 31.25%, #c0c0c0 50%, #b8b8b8 65.62%, #8c8c8c 100%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+}
+@media screen and (min-width: 1024px) {
+  .agendasContainer::after {
+    left: 50%;
+    width: 10px;
+  }
+}
+
+.agendaWrapper,
+.agendaWrapperReverse {
+  grid-template-columns: 2fr 3fr;
+  padding: 2rem 0;
+  display: grid;
+  color: white;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  .agendaWrapper,
+.agendaWrapperReverse {
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem 0;
+  }
+}
+.agendaWrapper::before,
+.agendaWrapperReverse::before {
+  content: "";
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(72.45% 72.45% at 27.78% 24.07%, #e1e1e1 0%, #9a9898 60.46%, #7b7a7a 79.62%, #878181 100%);
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  z-index: 1;
+}
+@media screen and (min-width: 1024px) {
+  .agendaWrapper::before,
+.agendaWrapperReverse::before {
+    left: 50%;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .agendaWrapperReverse .agendaDateWrapper {
+    order: 2;
+    padding-right: 0;
+    padding-left: 96px;
+  }
+  .agendaWrapperReverse .agendaDate {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  .agendaWrapperReverse .agendaActivitiesWrapper {
+    padding-left: 0;
+    padding-right: 96px;
+  }
+  .agendaWrapperReverse .agendaActivities {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.agendaDate {
+  padding: 0.5em;
+  background-color: #202427;
+  border: 3px solid #cc203a;
+  max-width: 256px;
+  border-radius: 1em;
+  margin-left: auto;
+}
+.agendaDate span {
+  display: block;
+  text-align: center;
+}
+.agendaDate > span:nth-child(1) {
+  font-weight: 900;
+  font-size: 14px;
+}
+.agendaDate > span:nth-child(2) {
+  font-size: 10px;
+  font-weight: 300;
+}
+@media screen and (min-width: 768px) {
+  .agendaDate > span:nth-child(1) {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .agendaDate > span:nth-child(2) {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .agendaDate {
+    padding: 1rem;
+    border-radius: 2rem;
+  }
+  .agendaDate > span:nth-child(1) {
+    font-size: 30px;
+  }
+  .agendaDate > span:nth-child(2) {
+    font-size: 17px;
+  }
+}
+.agendaDateWrapper {
+  padding-right: 1.25rem;
+}
+@media screen and (min-width: 1024px) {
+  .agendaDateWrapper {
+    padding-right: 96px;
+  }
+}
+
+.agendaActivities {
+  padding: 0.5em;
+  max-width: 420px;
+  background-color: #202427;
+  border: 3px solid #cc203a;
+  border-radius: 1em;
+  margin-right: auto;
+}
+@media screen and (min-width: 1024px) {
+  .agendaActivities {
+    border-radius: 2rem;
+    padding: 1rem;
+  }
+}
+.agendaActivities p {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.agendaActivities p:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+@media screen and (min-width: 768px) {
+  .agendaActivities p {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .agendaActivities p {
+    font-size: 17px;
+  }
+  .agendaActivities p:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+.agendaActivitiesTime {
+  padding-right: 0.5rem;
+}
+.agendaActivitiesWrapper {
+  padding-left: 1.25rem;
+}
+@media screen and (min-width: 1024px) {
+  .agendaActivitiesWrapper {
+    padding-left: 96px;
+  }
+}/*# sourceMappingURL=Agenda.module.css.map */
